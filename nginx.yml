@@ -1,0 +1,29 @@
+---
+- name: Update APT Package List
+  hosts: all
+  become: true
+
+  tasks:
+    - name: Update APT package list
+      apt:
+        update_cache: yes
+      when: ansible_os_family == 'Debian'
+
+  handlers:
+    - name: Run apt-get update
+      command: apt-get update
+
+
+- name: Install and Start nginx
+  hosts: all
+  become: true
+
+  tasks:
+    - name: Install nginx
+      apt:
+        name: nginx
+        state: present
+    - name: Start nginx
+      service:
+        name: nginx
+        state: started
