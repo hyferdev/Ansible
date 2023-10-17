@@ -1,8 +1,8 @@
 ---
 - name: Update APT Package List
-  hosts: all
+  hosts: webservers 
   become: true
-
+  
   tasks:
     - name: Update APT package list
       apt:
@@ -15,7 +15,7 @@
 
 
 - name: Install and Start nginx
-  hosts: all
+  hosts: webservers
   become: true
 
   tasks:
@@ -27,3 +27,44 @@
       service:
         name: nginx
         state: started
+
+- name: Install Git
+  hosts: webservers
+  become: true
+
+  tasks:
+    - name: Install git
+      apt:
+        name: git
+        state: present
+
+- name: Remove default webserver files
+  hosts: webservers
+  become: true
+
+  tasks:
+    - name: Remove a file
+      file:
+        path: /var/www/html
+        state: absent
+
+- name: Clone webserver repo
+  hosts: webservers
+  become: true
+
+  tasks:
+    - name: Clone webserver repo
+      git:
+        repo: https://github.com/hyferdev/HyferWebCV.git
+        dest: /var/www/HyferWebCV
+        update: yes
+
+- name: Move repo files
+  hosts: webservers
+  become: true
+
+  tasks:
+    - name: Move repo files
+      ansible.builtin.shell:
+        cmd: cp -r /var/www/HyferWebCV/* /var/www/
+        

@@ -23,11 +23,10 @@ resource "aws_lb_listener" "ansible_nlb_listener" {
 resource "aws_lb_target_group" "webservers" {
   name        = "ansible"
   port        = 80
-  protocol    = "HTTP"
+  protocol    = "TCP"
   target_type = "instance"
   vpc_id      = aws_vpc.ansible_vpc.id
   stickiness {
-    type = "lb_cookie"
-    cookie_duration = 172800
+    type = "source_ip"
   }
 }

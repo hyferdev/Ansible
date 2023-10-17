@@ -1,4 +1,5 @@
 # Adjust this file to the IP addresses of your webservers
-18.236.69.46
-54.244.209.42
-54.70.161.0
+[webservers]
+34.219.193.125
+35.87.26.52
+35.90.112.65
