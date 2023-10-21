@@ -1,4 +1,7 @@
-The goal of this repo is to showcase the capabilities of Ansible. We will be utilizing Terraform to provision our infrastructure, as outlined by the diagram above(Coming Soon). We then use Ansible to configure the provisioned VMs as webservers and pull our webpage code from github.
+![Screenshot 2023-10-21 184841](https://github.com/hyferdev/Ansible/assets/125156467/01f2233a-23fc-4a0d-8d5f-dfb582118525)
+
+
+The goal of this repo is to showcase the capabilities of Ansible. We will be utilizing Terraform to provision our infrastructure, as outlined by the diagram above. We then use Ansible to configure the provisioned VMs as webservers and pull our webpage code from github.
 
 ### You can follow the video tutorial here: Under Construction
 ### You can follow my "troubleshooting" video here: Under Construction
