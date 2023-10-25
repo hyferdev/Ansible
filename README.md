@@ -3,8 +3,7 @@
 
 The goal of this repo is to showcase the capabilities of Ansible. We will be utilizing Terraform to provision our infrastructure, as outlined by the diagram above. We then use Ansible to configure the provisioned VMs as webservers and pull our webpage code from github.
 
-### You can follow the video tutorial here: Under Construction
-### You can follow my "troubleshooting" video here: Under Construction
+### [YouTube walkthrough on how I created this Project](https://youtu.be/nzYPFNH7xFw)
 
 ## [Prerequisites](https://youtu.be/IkYkUJjqqqA?si=gFHXAX2JPATWknC1)
 - Terraform installed and connected to Terraform Cloud.
